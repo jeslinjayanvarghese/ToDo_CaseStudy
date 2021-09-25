@@ -14,7 +14,7 @@ function todolist(){
         if(data[i].completed == true){
 
             output += 
-            `<tr>
+                `<tr>
                 <td>${count}</td>
                 <td>${data[i].title}</td>
                 <td><input type="checkbox" checked disabled></td>
@@ -22,28 +22,21 @@ function todolist(){
         }
         else{
         output +=
-        `<tr>
-        <td>${count}</td>
-        <td>${data[i].title}</td>
-        <td><input type="checkbox" id="cb" onchange="checkalert();"></td>
-        </tr>`;
+                `<tr>
+                <td>${count}</td>
+                <td>${data[i].title}</td>
+                <td><input type="checkbox" id="cb" onchange="checkalert();"></td>
+                </tr>`;
         }
     
     $("#demo").html(output);
- 
     }
- 
-   
 });
 }
 
 function checkalert(){
-    
     var checkboxes = document.querySelectorAll('input[id="cb"]:checked').length;
-    
     var myP = new Promise(function(resolve,reject) {
-
-           
             if(checkboxes===5){
             
                 //console.log(count);
@@ -52,7 +45,6 @@ function checkalert(){
             // else{
             //   reject("Error Occurred!");
             // }
-         
     }) ;
 
 
@@ -68,8 +60,6 @@ myP //promise
 }
 
 function login(cb){
-    
-
     var email = document.getElementById("email");
     var password = document.getElementById("pass");
     var error = document.getElementById("error");
@@ -85,7 +75,6 @@ function login(cb){
         return false; 
     }
 }
-
 function validate(){
         error.innerHTML = "Valid";
         error.style.color= "green";
